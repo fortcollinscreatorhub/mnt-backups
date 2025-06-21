@@ -1,7 +1,9 @@
 #!/bin/bash
 
 set -ex
-dir="$(dirname "$0")/../config"
+cd -- "$(dirname -- "$0")"
+
+dir="$(pwd)/../config"
 mkdir -p "${dir}"
 cd "${dir}"
 

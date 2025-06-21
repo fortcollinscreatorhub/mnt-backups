@@ -21,4 +21,10 @@ if [ $? -ne 0 ]; then
     ret=1
 fi
 
+nestedlog run-as-block "MariaDB" \
+    ./backup.mariadb.all.sh
+if [ $? -ne 0 ]; then
+    ret=1
+fi
+
 exit $ret

@@ -7,6 +7,7 @@ cd -- "$(dirname -- "$0")"
 
 servers=()
 servers+=("10.1.10.146") # fcchnas3
+servers+=("10.1.10.152") # fcchsec3
 
 tgt_dir=/mnt/backups/bin
 

@@ -33,6 +33,10 @@ case "$(hostname)" in
         d1=0x5000cca224d99191
         d2=0x5000cca224ccf6b6
         ;;
+    fcchsec3)
+        d1=0x5000cca223cc2612
+        d2=0x5000cca223dcea0a
+        ;;
     *)
         echo "Unknown hostname" > /dev/stderr
         exit 1

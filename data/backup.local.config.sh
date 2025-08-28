@@ -30,12 +30,12 @@ run_redirect_mv_if_changed() {
 
 case "$(hostname)" in
     fcchnas3)
-        d1=0x5000cca224d99191
-        d2=0x5000cca224ccf6b6
+        d1=0x5000c500a6b31317
+        d2=0x5000c500a6b31ac7
         ;;
     fcchsec3)
-        d1=0x5000cca223cc2612
-        d2=0x5000cca223dcea0a
+        d1=0x5000c500a6b3c18f
+        d2=0x5000c500a6b3ccc7
         ;;
     *)
         echo "Unknown hostname" > /dev/stderr

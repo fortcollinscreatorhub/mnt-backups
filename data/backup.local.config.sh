@@ -31,7 +31,7 @@ run_redirect_mv_if_changed() {
 case "$(hostname)" in
     fcchnas3)
         d1=0x5000c500a6b31317
-        d2=0x5000c500a6b31ac7
+        d2=0x5000c500a6b3f93f
         ;;
     fcchsec3)
         d1=0x5000c500a6b3c18f

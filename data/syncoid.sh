@@ -25,7 +25,6 @@ for sync in "${syncs[@]}"; do
         /usr/sbin/syncoid \
             --identifier "${identifier}" \
             --no-sync-snap \
-            --create-bookmark \
             --use-hold \
             --sshport "${ssh_port}" \
             --sshkey /etc/fcchbackup/id_ed25519_syncoid \

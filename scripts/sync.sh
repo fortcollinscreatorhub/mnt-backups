@@ -6,6 +6,8 @@ set -x
 cd -- "$(dirname -- "$0")"
 
 servers=()
+#servers+=("10.1.10.1") # fcchfw1
+servers+=("192.168.63.219") # fcchfw1 at home during setup
 servers+=("10.1.10.146") # fcchnas3
 servers+=("10.1.10.152") # fcchsec3
 servers+=("10.1.10.154") # fcchsec4

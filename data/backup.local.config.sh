@@ -29,17 +29,21 @@ run_redirect_mv_if_changed() {
 }
 
 case "$(hostname)" in
+    fcchfw1)
+        d1=ata-SAMSUNG_SSD_PM851_2.5_7mm_128GB_S1CTNSAFA36150
+        d2=ata-SAMSUNG_SSD_PM851_2.5_7mm_128GB_S1CTNSAFA36135
+        ;;
     fcchnas3)
-        d1=0x5000c500a6b31317
-        d2=0x5000c500a6b3f93f
+        d1=wwn-0x5000c500a6b31317
+        d2=wwn-0x5000c500a6b3f93f
         ;;
     fcchsec3)
-        d1=0x5000c500a6b3c18f
-        d2=0x5000c500a6b3ccc7
+        d1=wwn-0x5000c500a6b3c18f
+        d2=wwn-0x5000c500a6b3ccc7
         ;;
     fcchsec4)
-        d1=0x5000c500a6b3dd53
-        d2=0x5000c500a6b333a3
+        d1=wwn-0x5000c500a6b3dd53
+        d2=wwn-0x5000c500a6b333a3
         ;;
     *)
         echo "Unknown hostname" > /dev/stderr
@@ -48,7 +52,7 @@ case "$(hostname)" in
 esac
 
 for d in "${d1}" "${d2}"; do
-    run_redirect_mv_if_changed "./sfdisk-d-${d}.txt" sudo /usr/sbin/sfdisk -d "/dev/disk/by-id/wwn-${d}"
+    run_redirect_mv_if_changed "./sfdisk-d-${d}.txt" sudo /usr/sbin/sfdisk -d "/dev/disk/by-id/${d}"
 done
 
 run_redirect_mv_if_changed ./blkid.txt                  sudo /usr/sbin/blkid
@@ -60,3 +64,4 @@ run_redirect_mv_if_changed ./zpool-status.txt           sudo /usr/sbin/zpool sta
 run_redirect_mv_if_changed ./zfs-list.txt               sudo /usr/sbin/zfs list
 run_redirect_mv_if_changed ./zfs-get-all.txt            sudo /usr/sbin/zfs get all
 run_redirect_mv_if_changed ./apt-mark-show-manual.txt   apt-mark showmanual
+run_redirect_mv_if_changed ./efibootmgr.txt             efibootmgr
